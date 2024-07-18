@@ -2,7 +2,7 @@
 // Função para registrar o menu de Cadastrar no painel administrativo
 function registrar_menu_cadastrar() {
     add_menu_page(
-        'Cadastrar Processo Seletivo',   // Título da página
+        'Cadastrar Processo Seletivo',  // Título da página
         'Cadastrar',                    // Título do menu
         'manage_options',               // Capacidade necessária para acessar o menu
         'cadastrar-processo-seletivo',  // Slug do menu
@@ -202,4 +202,26 @@ function proteger_pagina_com_senha( $pagina_id, $cpfs_candidatos ) {
     // Atualizar a meta chave da página para proteger com múltiplas senhas
     update_post_meta( $pagina_id, 'wp_protect_password_multiple_passwords', $senhas_serializadas );
 }
+
+// Função para preencher a coluna description
+function preencher_coluna_description( $membership_level_id, $pagina_id ) {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'pmpro_membership_levels';
+    $pagina_url = get_permalink( $pagina_id );
+
+    // Remover a barra final da URL, se houver
+    $pagina_url = untrailingslashit( $pagina_url );
+    
+    $description = '<a href="' . esc_url( $pagina_url . '-etapas-do-processo-seletivo' ) . '">Veja as etapas e realize seu agendamento</a>';
+
+    $wpdb->update(
+        $table_name,
+        array( 'description' => $description ),
+        array( 'id' => $membership_level_id ),
+        array( '%s' ),
+        array( '%d' )
+    );
+}
+
+add_action( 'admin_init', 'processar_formulario_processo_seletivo' );
 ?>
