@@ -1,0 +1,72 @@
+/*Painel WP - AUTOMAÇÕES PGLS DGIN*/
+h1.titulo-autpgls{
+    font-size: 1.9em;
+    font-weight: 500;
+    color: #052540;
+    padding: 27px;
+    text-align: center;
+    margin: 0 0 1rem;
+    background: #fff;
+    border-bottom: 1px solid #dcdcde;
+}
+div.container-autpgls{
+    background-color: #f8f8f8;
+    margin-top: 2%;
+    font-size: 16px;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),
+                0 2px 2px 0 rgba(0,0,0,0.12),
+				        0 1px 3px 0 rgba(0,0,0,0.20);
+}
+div.container-autpgls form{
+    padding: 40px;
+}
+div.container-autpgls input,
+div.container-autpgls textarea{
+    margin-top: 1.3%;
+    border: 1px solid #ccc;
+}
+div.container-autpgls input[type=text]{
+    min-width: 100%;
+    width: auto;
+    height: 3em;
+    
+}
+div.container-autpgls input[type=number]{
+    height: 3em;
+    margin-top: 3.3%;
+    width: 6em;
+}
+select#encerramento_periodo{
+    width: auto;
+    min-width: 9em;
+    margin-top: -0.7%;
+}
+div.container-autpgls select{
+    min-width: 15em;
+    width: auto;
+    height: 3em;
+    border: 1px solid #ccc;
+    margin-top: 3.3%;
+}
+
+div.container-autpgls textarea{
+    min-width: 100%;
+    height: 15em;
+    margin-top: 2.3%;
+}
+
+div.container-autpgls input[type=submit]{
+    padding: 5px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .form-group {
+    flex: 1 1 48%; 
+  }
+  
