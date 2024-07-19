@@ -15,7 +15,7 @@ div.container-autpgls{
     font-size: 16px;
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),
                 0 2px 2px 0 rgba(0,0,0,0.12),
-				        0 1px 3px 0 rgba(0,0,0,0.20);
+                0 1px 3px 0 rgba(0,0,0,0.20);
 }
 div.container-autpgls form{
     padding: 40px;
@@ -66,7 +66,60 @@ div.container-autpgls input[type=submit]{
     gap: 20px;
   }
   
-  .form-group {
-    flex: 1 1 48%; 
-  }
-  
+.form-group {
+   flex: 1 1 48%; /* Faz com que cada grupo ocupe 48% da largura disponível */
+}
+
+/*Popup-automações*/
+#success-popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 2px 1600px rgb(5 37 64 / 76%), 0 20px 10px -15px rgb(0 0 0 / 85%);
+    padding: 20px;
+    background-color: white;
+    z-index: 1000;
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;  
+    border:1px solid #407211;
+    border-top:18px solid #407211;
+}
+#success-popup h1{color: #407211;margin-top: 3%;}
+#success-popup h2{
+    font-size:1.8em;
+}
+#success-popup p, #success-popup a{
+    font-size:17px;
+    color: #384055;
+   
+}
+
+#success-popup .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+#success-popup button {
+    background: #5f625c;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 13px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+}
+
+#success-popup button.acessar-pagina {
+    border: 2px solid #407211;
+    background: #ffffff;
+    text-transform: uppercase;
+    color: #407211;
+}
