@@ -16,7 +16,7 @@ O principal objetivo é simplificar o processo de cadastro, tornando-o mais intu
 ## Plugins Utilizados
 - **Paid Memberships Pro:** Gerenciamento de níveis de associação e grupos.
 - **Password Protect WordPress (PPWP):** Proteção de páginas com senhas múltiplas.
-- **Gutenberg Blocks: Utilizado para a criação de conteúdos visuais e estruturados nas páginas criadas automaticamente.
+- **Gutenberg Blocks:**  Utilizado para a criação de conteúdos visuais e estruturados nas páginas criadas automaticamente.
 
 Este projeto é um produto mínimo viável (MVP) que visa entregar uma solução funcional dentro das limitações atuais do projeto, podendo servir como base para futuras automatizações e expansões.
 
