@@ -2,7 +2,7 @@
 // Função para registrar o menu de Cadastrar no painel administrativo
 function registrar_menu_cadastrar() {
     add_menu_page(
-        'Cadastrar Processo Seletivo',  // Título da página
+        'Cadastrar Processo Seletivo',   // Título da página
         'Cadastrar',                    // Título do menu
         'manage_options',               // Capacidade necessária para acessar o menu
         'cadastrar-processo-seletivo',  // Slug do menu
@@ -29,12 +29,12 @@ function exibir_formulario_cadastro() {
                         <label for="encerramento_previsto">Encerramento Previsto</label><br>
                         <input type="number" id="encerramento_previsto" name="encerramento_previsto" min="1" required>
                         <select id="encerramento_periodo" name="encerramento_periodo" required>
-                            <option value="">-- Selecione --</otion>
-							<option value="Hour">Hora(s)</option>
+                            <option value="">-- Selecione --</option>
+                            <option value="Hour">Hora(s)</option>
                             <option value="Day">Dia(s)</option>
                             <option value="Week">Semana(s)</option>
                             <option value="Month">Mês(es)</option>
-                            <option value="Year">Ano(s)</option>							
+                            <option value="Year">Ano(s)</option>                            
                         </select>
                     </div>
                     <div class="form-group">
@@ -146,9 +146,14 @@ function processar_formulario_processo_seletivo() {
 
         // Mostrar link da página criada em um popup
         $pagina_url = get_permalink( $pagina_id );
-        echo '<div id="success-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: white; border: 1px solid black; z-index: 1000;">
-                <p>Processo Seletivo criado com sucesso. <a href="' . esc_url( $pagina_url ) . '" target="_blank">Clique aqui para acessar a página.</a></p>
-                <button onclick="document.getElementById(\'success-popup\').style.display=\'none\'">Ok</button>
+        echo '<div id="success-popup">
+                <h2>Cadastro finalizado com sucesso!</h2>
+                <p>O processo seletivo e a página de acesso foram registrados com sucesso. Copie o link abaixo e envie-o aos candidatos para que eles possam se cadastrar no processo seletivo:</p>
+                <h1> ' . esc_url( $pagina_url ) . '</h1>
+                <div class="button-container">
+                    <button class="acessar-pagina" onclick="window.open(\'' . esc_url( $pagina_url ) . '\', \'_blank\')">Acessar Página</button>
+                    <button onclick="document.getElementById(\'success-popup\').style.display=\'none\'">FECHAR</button>
+                </div>
             </div>';
         echo '<script type="text/javascript">
                 document.addEventListener("DOMContentLoaded", function() {
@@ -180,7 +185,25 @@ function criar_publicar_pagina( $nome_processo, $membership_level_id ) {
 
 // Função para gerar o conteúdo da página
 function gerar_conteudo_pagina( $membership_level_id ) {
-    $conteudo = '';
+    $conteudo = '
+    <!-- wp:uagb/container {"block_id":"7c6a713e","variationSelected":true,"isBlockRootParent":true} -->
+    <div class="wp-block-uagb-container uagb-block-7c6a713e alignfull uagb-is-root-container">
+        <div class="uagb-container-inner-blocks-wrap">
+            <!-- wp:progress-bars/progress-bar-block {"blockId":"eb-progressbar-euvvdva","blockMeta":{"desktop":".eb-progressbar-wrapper.eb-progressbar-euvvdva { margin-top:5%; margin-right:0%; margin-left:0%; margin-bottom:8% }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-line { height:25px; background-color:#eaeaea }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle { width:200px; height:200px }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-inner-content { padding:12px }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-half { border-width:12px; border-color:rgba(211,139,74,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-fill .eb-progressbar-circle-half,.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-half-circle-fill .eb-progressbar-circle-half { background-color:rgba(211,139,74,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-line-fill { height:25px; background-color:rgba(211,139,74,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-title { font-size:0.7em; font-style:italic; text-transform:uppercase; margin-left:7px; color:rgba(255,254,254,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-count-wrap { font-family:\u0022Cabin\u0022, sans-serif; font-size:1em; font-weight:400; font-style:normal; color:rgba(27,84,123,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-inner { border-color:#eaeaea; border-width:12px }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-half-circle-after { width:200px; color:var(\u002d\u002deb-global-text-color) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-half-circle { width:200px; height:calc(100 * 1px) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-box { height:200px; width:140px; border-width:12px; border-color:#eaeaea }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-box-fill { background-color:rgba(211,139,74,1) }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-line-container { position:relative }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-line-container .eb-progressbar-title { position:absolute; top:50%; left:0; transform:translateY(-50%); z-index:9 }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-line-container .eb-progressbar-line .eb-progressbar-count-wrap { bottom:50% !important; transform:translateY(50%) !important }","tab":".eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-inner-content { padding:px }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-half-circle { height:calc(100 * 1px) }","mobile":".eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-circle-inner-content { padding:px }.eb-progressbar-wrapper.eb-progressbar-euvvdva .eb-progressbar-half-circle { height:calc(100 * 1px) }"},"title":"Inscrição iniciada","animationDuration":3800,"titleColor":"rgba(255,254,254,1)","counterColor":"rgba(27,84,123,1)","progressColor":"rgba(211,139,74,1)","progressGradient":"linear-gradient(45deg, rgba(0,0,0,0.8) 0% , rgba(0,0,0,0.4) 100%)","showInline":true,"stripeAnimation":"normal","counterTextFontFamily":"Cabin","counterTextSizeUnit":"em","counterTextFontSize":1,"counterTextFontWeight":"400","counterTextFontStyle":"normal","titleTextSizeUnit":"em","titleTextFontSize":0.7,"titleTextFontStyle":"italic","titleTextTextTransform":"uppercase","wrpHeightRange":25,"wrpMarginUnit":"%","wrpMarginTop":"5","wrpMarginBottom":"8","ttlSpaceRight":"","ttlSpaceLeft":"7","commonStyles":{"desktop":".wp-admin .eb-parent-eb-progressbar-euvvdva { display:block; opacity:1 }.eb-parent-eb-progressbar-euvvdva { display:block }","tab":".editor-styles-wrapper.wp-embed-responsive .eb-parent-eb-progressbar-euvvdva { display:block; opacity:1 }.eb-parent-eb-progressbar-euvvdva { display:block }","mobile":".editor-styles-wrapper.wp-embed-responsive .eb-parent-eb-progressbar-euvvdva { display:block; opacity:1 }.eb-parent-eb-progressbar-euvvdva { display:block }"}}>
+                <div class="wp-block-progress-bars-progress-bar-block"><div class="eb-parent-wrapper eb-parent-eb-progressbar-euvvdva "><div class="eb-progressbar-wrapper eb-progressbar-euvvdva"><div class="eb-progressbar-line-container center"><div class="eb-progressbar-title">Inscrição iniciada</div><div class="eb-progressbar eb-progressbar-line" data-layout="line" data-count="50" data-duration="3800"><span class="eb-progressbar-count-wrap"><span class="eb-progressbar-count">50</span><span class="postfix">%</span></span><span class="eb-progressbar-line-fill"></span></div></div></div></div></div>
+            <!-- /wp:progress-bars/progress-bar-block -->
+
+            <!-- wp:uagb/advanced-heading {"block_id":"95be249b","classMigrate":true,"headingColor":"#334a78"} -->
+            <div class="wp-block-uagb-advanced-heading uagb-block-95be249b"><h2 class="uagb-heading-text" style="
+    color: #334a78;">Selecione abaixo o processo que você está participando:</h2></div>
+            <!-- /wp:uagb/advanced-heading -->
+
+            <!-- wp:shortcode -->
+            [pmpro_advanced_levels levels="' . $membership_level_id . '" layout="table" back_link="false" description="false" expiration="false" price="hide"]
+            <!-- /wp:shortcode -->
+        </div>
+    </div>
+    <!-- /wp:uagb/container -->';
 
     return $conteudo;
 }
