@@ -1,6 +1,6 @@
 # Cadastros Automatizados
 
-Este projeto foi desenvolvido especificamente *para um cliente* com o objetivo de resolver problemas de agilidade em interfaces durante o processo de cadastro. Através da automação de tarefas que anteriormente eram manuais, buscamos melhorar a experiência do usuário e otimizar a eficiência do processo. O código implementa funcionalidades automáticas no CMS, simplificando o fluxo de trabalho administrativo e proporcionando uma solução personalizada para as necessidades do cliente.
+Este projeto foi desenvolvido especificamente **para um cliente** com o objetivo de resolver problemas de agilidade em interfaces durante o processo de cadastro. Através da automação de tarefas que anteriormente eram manuais, buscamos melhorar a experiência do usuário e otimizar a eficiência do processo. O código implementa funcionalidades automáticas no CMS, simplificando o fluxo de trabalho administrativo e proporcionando uma solução personalizada para as necessidades do cliente.
 
 ## Objetivo
 O principal objetivo é simplificar o processo de cadastro, tornando-o mais intuitivo e rápido para os usuários, especialmente aqueles que não estão familiarizados com CMS. A abordagem adotada aproveita as funcionalidades existentes do CMS e plugins, focando em inserções no banco de dados para manter a compatibilidade com o sistema atual e respeitar as restrições de tempo e orçamento do cliente.
